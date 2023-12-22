@@ -1,4 +1,4 @@
-module git.qpaas.com/go-components/webconsole
+module github.com/ylh990835774/ay-go-components
 
 go 1.16
 

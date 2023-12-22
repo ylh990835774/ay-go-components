@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
 )
 
 var jsonContentType = []string{"application/json; charset=utf-8"}

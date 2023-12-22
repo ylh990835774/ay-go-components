@@ -11,9 +11,9 @@ import (
 	"strings"
 	"testing"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
-	"git.qpaas.com/go-components/webconsole/pkg/console"
 	"github.com/stretchr/testify/require"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
+	"github.com/ylh990835774/ay-go-components/pkg/console"
 )
 
 func TestRedisConsoleWithDefaultOpt(t *testing.T) {
@@ -178,7 +178,7 @@ func TestRedisConsoleWithUserDefinedOptions(t *testing.T) {
 
 	t.Run("redis query valid command", func(t *testing.T) {
 		SQLList := []string{
-			`  get 
+			`  get
 			game`,
 		}
 
@@ -348,7 +348,5 @@ func BenchmarkRedisConsoleWithDefaultOpt(b *testing.B) {
 				fmt.Println(string(respBodyByte))
 			}
 		}
-
 	})
-
 }

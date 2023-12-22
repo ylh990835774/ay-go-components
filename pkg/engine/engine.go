@@ -1,7 +1,7 @@
 package engine
 
 import (
-	"git.qpaas.com/go-components/webconsole/pkg/common"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
 )
 
 type Engine interface {

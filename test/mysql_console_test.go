@@ -12,9 +12,9 @@ import (
 	"strings"
 	"testing"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
-	"git.qpaas.com/go-components/webconsole/pkg/console"
 	"github.com/stretchr/testify/require"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
+	"github.com/ylh990835774/ay-go-components/pkg/console"
 )
 
 func SQLBase64(sql string) string {
@@ -38,7 +38,6 @@ func mockHTTPReq(t *testing.T, cle console.Console, opt *common.HandlerOptions, 
 	require.NoError(t, err)
 
 	fmt.Println(string(respBodyByte))
-
 }
 
 func TestMySQLConsoleWithDefaultOpt(t *testing.T) {
@@ -78,7 +77,7 @@ func TestMySQLConsoleWithDefaultOpt(t *testing.T) {
 			`update console_test set id=1 where money !=''`,
 			`drop table console_test`,
 			`drop database alarm_server_local`,
-			`  
+			`
 			   drop table
 			console_test`,
 		}
@@ -324,7 +323,6 @@ func TestMySQLConsoleWithIgnoreSystemIntercpet(t *testing.T) {
 
 		}
 	})
-
 }
 
 func BenchmarkMySQLConsoleWithDefaultOpt(b *testing.B) {

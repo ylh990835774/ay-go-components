@@ -3,8 +3,8 @@ package engine
 import (
 	"testing"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
 	"github.com/stretchr/testify/require"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
 )
 
 func TestIsRedisCMDSafe(t *testing.T) {
@@ -19,7 +19,8 @@ func TestIsRedisCMDSafe(t *testing.T) {
 		{
 			"ttl key01",
 			true,
-		}, {
+		},
+		{
 			"type key02",
 			true,
 		},
@@ -30,17 +31,21 @@ func TestIsRedisCMDSafe(t *testing.T) {
 		{
 			"hget key1 key2",
 			true,
-		}, {
+		},
+		{
 			"hset key1 key2 val2",
 			false,
-		}, {
+		},
+		{
 			"  get key2",
 			true,
-		}, {
-			`hset 
+		},
+		{
+			`hset
 			get key2 val2`,
 			false,
-		}, {
+		},
+		{
 			`hget
 			 key1 key2`,
 			true,

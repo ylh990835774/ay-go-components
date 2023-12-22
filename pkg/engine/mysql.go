@@ -7,16 +7,18 @@ import (
 	"fmt"
 	"time"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
-	"git.qpaas.com/go-components/webconsole/pkg/inerr"
 	mmysql "github.com/go-sql-driver/mysql"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
+	"github.com/ylh990835774/ay-go-components/pkg/inerr"
 	mydriver "gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	vsqlparser "vitess.io/vitess/go/vt/sqlparser"
 )
 
-const BUF = 1<<20 - 1
-const BLOB_FIELD_NOT_DISPLA = "Blob field cannot be displayed"
+const (
+	BUF                   = 1<<20 - 1
+	BLOB_FIELD_NOT_DISPLA = "Blob field cannot be displayed"
+)
 
 type MySQLEngine struct {
 	driver *gorm.DB
@@ -292,7 +294,6 @@ func newMySQLClient(dsn string) (*gorm.DB, error) {
 		DSN:                       dsn,
 		SkipInitializeWithVersion: false,
 	}), &gorm.Config{})
-
 	if err != nil {
 		return nil, err
 	}

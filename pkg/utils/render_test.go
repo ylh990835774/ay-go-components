@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
-	"git.qpaas.com/go-components/webconsole/pkg/inerr"
 	"github.com/stretchr/testify/require"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
+	"github.com/ylh990835774/ay-go-components/pkg/inerr"
 )
 
 func TestXxx(t *testing.T) {

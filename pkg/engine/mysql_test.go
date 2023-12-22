@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
 	"github.com/stretchr/testify/require"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
 )
 
 func TestMySQLPreCheck(t *testing.T) {
@@ -19,34 +19,34 @@ func TestMySQLPreCheck(t *testing.T) {
 		" select * from mock_table where id =232 and name='sga' limit 20",
 		`select id, name
 		from mock_table`,
-		`select 
+		`select
 		id, name
 		from mock_table`,
 		`select
      	   id, name
 		from mock_table`,
 		"explain select * from table01 where id=333",
-		`explain 
-		select * 
+		`explain
+		select *
 		from table01 where id=333`,
-		`explain 
-		  select * 
+		`explain
+		  select *
 		from table01 where id=333`,
-		`explain 
-		 delete from  
+		`explain
+		 delete from
 		mock_table;`,
 		`select * from table01 inner join table02 on tabl01.id = table02.id`,
-		`   
+		`
 		select * from table01 inner join table02 on tabl01.id = table02.id`,
 		"update mock_table set id=1 where name=2",
 	}
 
 	invalidCase := []string{
-		`explain; 
-		 delete from  
+		`explain;
+		 delete from
 		mock_table;`,
 		`explain \n
-		   delete from  
+		   delete from
 		mock_table;`,
 		`select * from table01;
 		 select * from table02;`,
@@ -62,12 +62,12 @@ func TestMySQLPreCheck(t *testing.T) {
 		"truncate mock_table",
 		"  insert into (f1, f2) values(v1, v2)",
 		"drop table mock_table;",
-		`drop 
+		`drop
 		table mock_table;`,
-		`explain drop 
+		`explain drop
 		table mock_table;`,
-		`  drop 
-		 table 
+		`  drop
+		 table
 		  mock_table;`,
 		`select * from table01;
 			drop table mock_table;`,

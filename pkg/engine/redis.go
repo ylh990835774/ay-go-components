@@ -7,11 +7,11 @@ import (
 	"strings"
 	"time"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
-	"git.qpaas.com/go-components/webconsole/pkg/inerr"
 	"github.com/anmitsu/go-shlex"
 	"github.com/go-redis/redis/v8"
 	"github.com/pkg/errors"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
+	"github.com/ylh990835774/ay-go-components/pkg/inerr"
 )
 
 type RedisEngine struct {
@@ -62,7 +62,7 @@ func (r *RedisEngine) Table(schema string) ([]string, error) {
 	defer cancel()
 
 	var cursor uint64
-	var keyList = make([]string, 0)
+	keyList := make([]string, 0)
 
 	for {
 		var keys []string

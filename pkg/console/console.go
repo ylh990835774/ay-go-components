@@ -1,18 +1,17 @@
 package console
 
 import (
+	"embed"
 	"encoding/base64"
+	"io/fs"
 	"net/http"
 	"strings"
 
-	"embed"
-	"io/fs"
-
-	"git.qpaas.com/go-components/webconsole/pkg/common"
-	"git.qpaas.com/go-components/webconsole/pkg/engine"
-	"git.qpaas.com/go-components/webconsole/pkg/inerr"
-	"git.qpaas.com/go-components/webconsole/pkg/utils"
 	"github.com/pkg/errors"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
+	"github.com/ylh990835774/ay-go-components/pkg/engine"
+	"github.com/ylh990835774/ay-go-components/pkg/inerr"
+	"github.com/ylh990835774/ay-go-components/pkg/utils"
 )
 
 //go:embed dist/*

@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	"git.qpaas.com/go-components/webconsole/pkg/inerr"
+	"github.com/ylh990835774/ay-go-components/pkg/inerr"
 )
 
 const (

@@ -1,33 +1,41 @@
-### WEB控制台
+### WEB 控制台
 
-web-console库实现一个自包含前端页面的DB组件控制台，引入者导入库后，结合具体的DB类型进行实例操作后，结合具体使用的web框架，将组件暴露的handler注入到路由框架中
+web-console 库实现一个自包含前端页面的 DB 组件控制台，引入者导入库后，结合具体的 DB 类型进行实例操作后，结合具体使用的 web 框架，将组件暴露的 handler 注入到路由框架中
 
 ### Supported DB
+
 ---
-* MySQL
-* Redis
-* MongoDB (TODO)
+
+- MySQL
+- Redis
+- MongoDB (TODO)
 
 ### Getting started
+
 ---
-### MySQL控制台接入
+
+### MySQL 控制台接入
 
 ##### 1.download module
 
 ```
-go get git.qpaas.com/go-components/webconsole@v1.0.0
+go get github.com/ylh990835774/ay-go-components@v1.0.0
 ```
+
 ##### 2.import and use
-   * Gin框架集成
-   ---
+
+- Gin 框架集成
+
+---
+
 ```
 package main
 
 import (
 	"fmt"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
-	"git.qpaas.com/go-components/webconsole/pkg/console"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
+	"github.com/ylh990835774/ay-go-components/pkg/console"
 	"github.com/gin-gonic/gin"
 )
 
@@ -39,7 +47,7 @@ func main() {
 	r := gin.Default()
 
 	// user set console route path. eg: "/console/mysql"
-	consoleRoute := r.Group("/console") 
+	consoleRoute := r.Group("/console")
 	{
 		// *any: 采用Gin的模糊匹配
 		consoleRoute.Any("/mysql/*any", func(ctx *gin.Context) {
@@ -108,9 +116,12 @@ func main() {
 	r.Run(":9099")
 }
 ```
-   * Iris框架集成
-   因Iris框架对于模糊匹配的支持没有Gin友好,相比于集成到Gin,集成到Iris的步骤略为繁琐
-   ---
+
+- Iris 框架集成
+  因 Iris 框架对于模糊匹配的支持没有 Gin 友好,相比于集成到 Gin,集成到 Iris 的步骤略为繁琐
+
+---
+
 ```
 package main
 
@@ -119,8 +130,8 @@ import (
 
 	"github.com/kataras/iris/v12/context"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
-	"git.qpaas.com/go-components/webconsole/pkg/console"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
+	"github.com/ylh990835774/ay-go-components/pkg/console"
 	"github.com/kataras/iris/v12"
 )
 
@@ -210,20 +221,23 @@ func main() {
 	irisR.Run(iris.Addr(":9099"), iris.WithoutPathCorrectionRedirection)
 }
 ```
+
 ##### 3.access web cosole
+
 ```
 浏览器键入地址：http://hostIP:9099/console/mysql/
 ```
+
 ![web console page preview](/web-console-demo.png)
 
 ### Lib some default action explian
+
 ---
-* MySQL
-  * if SQL is empty， `desc table` as default SQL.
-  * if Select SQL is not set limit, lib will append limit 100 to sql to avoid query set too big.
-  * if AllowSQLType not set, lib will use default white list(Select、Show、Explain、Desc) for sql valid.
-  * if Is IsIgnoreSystemIntercept set true, lib will not check sql and use can set custom check login in beforeQuery hook func.
-  * if sql execute timeout is not set, 15 seconds will be set.
-  * user can use before query hook to complete some business logic, if before hook func return error, query will be aborted not continue. 
 
-
+- MySQL
+  - if SQL is empty， `desc table` as default SQL.
+  - if Select SQL is not set limit, lib will append limit 100 to sql to avoid query set too big.
+  - if AllowSQLType not set, lib will use default white list(Select、Show、Explain、Desc) for sql valid.
+  - if Is IsIgnoreSystemIntercept set true, lib will not check sql and use can set custom check login in beforeQuery hook func.
+  - if sql execute timeout is not set, 15 seconds will be set.
+  - user can use before query hook to complete some business logic, if before hook func return error, query will be aborted not continue.

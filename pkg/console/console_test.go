@@ -10,10 +10,10 @@ import (
 	"testing"
 	"time"
 
-	"git.qpaas.com/go-components/webconsole/mock"
-	"git.qpaas.com/go-components/webconsole/pkg/common"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
+	"github.com/ylh990835774/ay-go-components/mock"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
 )
 
 func TestHandlerRoute(t *testing.T) {

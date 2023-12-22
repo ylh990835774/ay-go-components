@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"sync"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
-	"git.qpaas.com/go-components/webconsole/pkg/engine"
-	"git.qpaas.com/go-components/webconsole/pkg/inerr"
 	"github.com/pkg/errors"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
+	"github.com/ylh990835774/ay-go-components/pkg/engine"
+	"github.com/ylh990835774/ay-go-components/pkg/inerr"
 )
 
 type redisConsole struct {

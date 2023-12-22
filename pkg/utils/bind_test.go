@@ -8,8 +8,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"git.qpaas.com/go-components/webconsole/pkg/common"
 	"github.com/stretchr/testify/require"
+	"github.com/ylh990835774/ay-go-components/pkg/common"
 )
 
 func TestGetBody(t *testing.T) {
